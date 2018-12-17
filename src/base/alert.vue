@@ -21,7 +21,7 @@ div {
   width: 250px;
   height: 40px;
   background-color: rgba(0,0,0,0.7);
-  color: white;
+  color: red;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
