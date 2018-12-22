@@ -72,6 +72,7 @@ const mutations = {
   getValue(state, value) {
     state.msg = value;
   },
+
 };
 const actions = {
   // 从后台获取数据
@@ -95,7 +96,9 @@ const getters = {
     for (let i = 0, length = state.cart.length; i < length; i++) {
       state.totalPrice += (state.cart[i].bookPrice) * (state.cart[i].bookNumber);
     }
-  }
+  },
+
+
 };
 export default new Vuex.Store({
   router,

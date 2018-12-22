@@ -10,8 +10,8 @@
             <div>
               <h4>{{book.bookName}}</h4>
               <p>{{book.bookInfo}}</p>
-              <b>价格：<i>{{book.bookPrice}}</i>元</b>
-              <p>数量：<span @click="decrement(book.id)">-</span> <input type="text" v-model="book.bookNumber"> <span @click="increment(book.id)">+</span> 本</p>
+              <p class="price">价格：<i>{{book.bookPrice}}</i>元 <span @click="decrement(book.id)">-</span>
+                <input type="text" v-model.number="book.bookNumber"> <span @click="increment(book.id)">+</span></p>
             </div>
           </li>
         </ul>
@@ -37,18 +37,19 @@
       }
     },
     created() {
-
+      this.count;
+      this.price;
     },
     computed: {
       ...mapState(['cart', 'totalPrice', 'totalCount']),
-      ...mapGetters(['count', 'price']),
+      ...mapGetters(['count', 'price',]),
     },
     methods: {
-      ...mapMutations(['increment','decrement'])
+      ...mapMutations(['increment','decrement']),
     },
     updated() {
-      // this.count;
-      // this.price;
+      this.count;
+      this.price;
     }
   }
 </script>
@@ -72,7 +73,6 @@
   li {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
     border-bottom: 1px solid #dddddd;
     padding: 10px;
   }
@@ -99,5 +99,16 @@
   i {
     font-style: normal;
     color: red;
+    font-size: 20px;
+  }
+  .price span{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .price {
+    display: flex;
+    vertical-align: center;
+    margin-top: 10px;
+    font-size: 18px;
   }
 </style>
