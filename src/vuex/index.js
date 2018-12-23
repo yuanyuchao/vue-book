@@ -18,19 +18,19 @@ const mutations = {
   },
   // 数量加1
   decrement(state, id) {
-    for (let i = 0, length = state.cart.length; i < length; i++) {
-      if (id == state.cart[i].id) {
-        if (state.cart[i].bookNumber > 1) {
-          state.cart[i].bookNumber--;
+    for (let value of state.cart) {
+      if (id == value.id) {
+        if (value.bookNumber > 1) {
+          value.bookNumber--;
         }
       }
     }
   },
   // 数量减1
   increment(state, id) {
-    for (let i = 0, length = state.cart.length; i < length; i++) {
-      if (id == state.cart[i].id) {
-        state.cart[i].bookNumber++;
+    for (let value of state.cart) {
+      if (id == value.id) {
+        value.bookNumber++;
       }
     }
   },
@@ -41,8 +41,8 @@ const mutations = {
   },
   //添加到购物车
   addCart(state, obj) {
-    for (let i = 0; i < state.list.length; i++) {
-      if (obj.id == state.list[i].id) {
+    for (let value of state.list) {
+      if (obj.id == value.id) {
         state.cart.unshift(obj);
         router.push('/collect');//vuex里使用路由跳转步骤
         // 1.引入router
@@ -90,15 +90,15 @@ const getters = {
   // 获取购物车商品总数量
   count(state) {
     state.totalCount = 0;
-    for (let i = 0, length = state.cart.length; i < length; i++) {
-      state.totalCount += state.cart[i].bookNumber;
+    for (let value of state.cart) {
+      state.totalCount += value.bookNumber;
     }
   },
   // 获取购物车商品总价格
   price(state) {
     state.totalPrice = 0;
-    for (let i = 0, length = state.cart.length; i < length; i++) {
-      state.totalPrice += (state.cart[i].bookPrice) * (state.cart[i].bookNumber);
+    for (let value of state.cart) {
+      state.totalPrice += (value.bookPrice) * (value.bookNumber);
     }
   },
 

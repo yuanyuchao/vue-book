@@ -13,7 +13,7 @@
           <div>
             <h4>{{book.bookName}}</h4>
             <p ref="aa" @click.stop="getValue($event.target.innerHTML)">{{book.bookInfo}}</p>
-            <b>{{book.bookPrice}}</b>
+            <b>{{book.bookPrice}}元</b>
             <div class="btn">
               <button @click.stop="newAddCart(book)">加入购物车</button>
               <button @click.stop="removeOne(book)">删除</button>
@@ -77,8 +77,8 @@
       //   localStorage.setItem('list',JSON.stringify(this.list))
       // },
       newAddCart(obj){
-        for (let i = 0, length = this.cart.length; i < length; i++) {
-          if (obj == this.cart[i]) {
+        for (let value of this.cart) {
+          if (obj == value) {
             this.isShow = true;
             this.tanMsg = '该商品已经在购物车了';
             setTimeout(()=>{

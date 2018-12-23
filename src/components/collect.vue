@@ -15,7 +15,7 @@
             </div>
           </li>
         </ul>
-        <p class="total"><span>总数量：{{totalCount}}本</span><span>总价：<i>{{totalPrice.toFixed(2)}}</i>元</span></p>
+        <p class="total"><span>总数量：<i>{{totalCount}}</i>本</span><span>总价：<i>{{totalPrice.toFixed(2)}}</i>元</span></p>
       </template>
     </div>
   </div>
@@ -101,8 +101,6 @@
     font-size: 20px;
   }
   .price span{
-    /*margin-left: 10px;*/
-    /*margin-right: 10px;*/
     border:1px solid #999999;
     display: inline-block;
     width: 20px;
