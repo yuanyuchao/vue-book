@@ -47,14 +47,19 @@
         isShow:false,
         msg:'',
       }
-
     },
     created() {
-      // this.getOneBook()
-      this.getMsg(this.id);
-      // this.getData();
+      this.getSaveData();//如果页面刷新后vuex里的list的值为空，就把本地储存的值赋值给list。
+      this.getMsg(this.id);//根据id来获取不同书籍的各种信息。
     },
     methods: {
+      getSaveData(){
+        if(this.list==''){
+          this.getSave();
+        }
+      },
+      //存储数据
+
       newRevise(obj){
         if(this.obj.bookName.length==0){
           this.isShow=true;
@@ -82,7 +87,7 @@
         };
         this.revise(obj);
       },
-      ...mapMutations(['update', 'revise']),
+      ...mapMutations(['update', 'revise','getSave']),
       // async getOneBook(){
       //  let {data} = await findOneBook(this.id);
       //  this.book = data.list;
@@ -108,9 +113,6 @@
       handleInput(e){
         this.obj.bookPrice=e.target.value.replace(/[^\d.]/g,'');
       },
-
-    },
-    updated() {
     },
     computed: {
       ...mapState(['list']),

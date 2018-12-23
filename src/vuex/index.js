@@ -13,6 +13,9 @@ const state = {
   totalCount: 0,//购物车总数量
 };
 const mutations = {
+  getSave(state){
+    state.list = JSON.parse(localStorage.getItem('list'));
+  },
   // 数量加1
   decrement(state, id) {
     for (let i = 0, length = state.cart.length; i < length; i++) {
@@ -79,6 +82,7 @@ const actions = {
   getListAction({commit}) {
     getBook().then((res) => {
       commit('getList', res.data.list);
+      localStorage.setItem('list',JSON.stringify(res.data.list));//获取到数据后存入本地，防止丢失。
     })
   }
 };

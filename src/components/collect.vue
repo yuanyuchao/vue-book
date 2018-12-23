@@ -10,7 +10,7 @@
             <div>
               <h4>{{book.bookName}}</h4>
               <p>{{book.bookInfo}}</p>
-              <p class="price">价格：<i>{{book.bookPrice}}</i>元 <span @click="decrement(book.id)">-</span>
+              <p class="price">单价：<i>{{book.bookPrice}}</i>元 <span @click="decrement(book.id)">-</span>
                 <input type="text" v-model.number="book.bookNumber"> <span @click="increment(book.id)">+</span></p>
             </div>
           </li>
@@ -78,7 +78,6 @@
   }
   input {
     width: 30px;
-    height: 20px;
     text-align: center;
   }
 
@@ -102,8 +101,15 @@
     font-size: 20px;
   }
   .price span{
-    margin-left: 10px;
-    margin-right: 10px;
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
+    border:1px solid #999999;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+  }
+  .price span:nth-of-type(1){
+    margin-left: 20px;
   }
   .price {
     display: flex;

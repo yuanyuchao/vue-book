@@ -5,16 +5,16 @@
       <pop v-show="isShow" >{{msg}}</pop>
       <div>
         <label for="">书名</label>
-        <input type="text" v-model="obj.bookName">
+        <input type="text" v-model="obj.bookName" placeholder="不能为空">
       </div>
 
       <div>
         <label for="">价格</label>
-        <input type="text" v-model="obj.bookPrice" @input="handleInput">
+        <input type="text" v-model="obj.bookPrice" @input="handleInput" placeholder="不能为空">
       </div>
       <div>
         <label for="">简介</label>
-        <input type="text" v-model="obj.bookInfo">
+        <input type="text" v-model="obj.bookInfo" placeholder="不能为空">
       </div>
         <button @click="addList(obj)">添加</button>
     </div>

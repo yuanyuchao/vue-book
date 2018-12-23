@@ -62,7 +62,6 @@
 
     },
     created() {
-      // console.log(this.$refs.msg.value)
       this.getListAction;
       setTimeout(() => {
         this.loading = false;
@@ -70,10 +69,13 @@
       //数据加载完毕loading消失。
     },
     mounted() {
-      // console.log(this.$refs.aa.innerHTML);
     },
 
     methods: {
+      // save(){
+      //   alert(1)
+      //   localStorage.setItem('list',JSON.stringify(this.list))
+      // },
       newAddCart(obj){
         for (let i = 0, length = this.cart.length; i < length; i++) {
           if (obj == this.cart[i]) {
