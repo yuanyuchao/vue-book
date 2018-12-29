@@ -1,6 +1,6 @@
 <template>
   <div class="add">
-    <myHeader :back="true">添加</myHeader>
+    <myHeader>添加</myHeader>
     <div class="content">
       <pop v-show="isShow" >{{msg}}</pop>
       <div>

@@ -6,7 +6,7 @@ import router from '../router'
 Vue.use(Vuex)
 
 const state = {
-  list: [],
+  list: [],//列表页数据
   totalPrice: 0,//购物车总价格
   msg: '',
   cart: [],//购物车商品列表
