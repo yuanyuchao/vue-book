@@ -98,10 +98,10 @@
       // async remove(id) {
       //  await removeBook(id);
       // }
-      remove(id) {
-        //item就是数组里的每一项 在这里是this.books;
-        this.books = this.books.filter(item => item.id !== id);
-      },
+      // remove(id) {
+      //   //item就是数组里的每一项 在这里是this.books;
+      //   this.books = this.books.filter(item => item.id !== id);
+      // },
     }
   }
 </script>

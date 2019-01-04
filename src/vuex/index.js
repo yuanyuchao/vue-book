@@ -57,7 +57,7 @@ const mutations = {
   revise(state, obj) {
     for (let i = 0; i < state.list.length; i++) {
       if (obj.id == state.list[i].id) {
-        Vue.set(state.list, i, obj);
+        Vue.set(state.list, i, obj);//必须用Vue.set方法，否则视图不更新。
         router.push('/list');
       };
     }
@@ -68,8 +68,8 @@ const mutations = {
   },
 //删除
   removeOne(state, one) {
+    //item就是数组里的每一项
     state.list = state.list.filter(item => item !== one);
-    console.log(state.list);
   },
 
   getValue(state, value) {
