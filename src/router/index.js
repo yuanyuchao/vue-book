@@ -36,6 +36,7 @@ export default new Router({
       path:'/add',
       component:() => import('../components/add'),
       meta:{
+        keepAlive:true,
         title:'添加',
       }
     },
@@ -44,6 +45,7 @@ export default new Router({
       path:'/detail',
       component:() => import('../components/detail'),
       meta:{
+        keepAlive:true,
         title:'详情',
       }
     },
@@ -51,6 +53,7 @@ export default new Router({
       path:'/collect',
       component:() => import('../components/collect'),
       meta:{
+        keepAlive:true,
         title:'购物车',
       }
     },

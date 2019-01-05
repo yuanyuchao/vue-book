@@ -1,9 +1,9 @@
 <template>
   <div>
-    <myHeader>列表</myHeader>
+    <MyHeader>列表</MyHeader>
     <div class="content">
-      <pop v-show="isShow">{{tanMsg}}</pop>
-      <loadingAnimate v-if="loading"></loadingAnimate>
+      <Alert v-show="isShow">{{tanMsg}}</Alert>
+      <Loading v-if="loading"></Loading>
       <ul v-else>
         <router-link v-for="(book,index) in list"
                      :key="index"
@@ -28,11 +28,12 @@
 </template>
 
 <script>
-  import myHeader from '../base/myHeader'
+  // import myHeader from '../base/myHeader'
   import {getBook, removeBook} from '../API'
-  import loadingAnimate from '../base/loading'
-  import pop from '../base/alert'
+  // import loadingAnimate from '../base/loading'
+  // import pop from '../base/alert'
   import {mapState, mapMutations, mapActions,mapGetters} from 'vuex'
+  // import Loading from "../base/loading";
 
   export default {
     name: "list",
@@ -52,9 +53,10 @@
       }
     },
     components: {
-      myHeader,
-      loadingAnimate,
-      pop
+      // Loading
+      // myHeader,
+      // loadingAnimate,
+      // pop
     },
     computed: {
       ...mapState(['list','cart']),

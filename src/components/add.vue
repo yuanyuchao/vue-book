@@ -1,8 +1,8 @@
 <template>
   <div class="add">
-    <myHeader>添加</myHeader>
+    <MyHeader>添加</MyHeader>
     <div class="content">
-      <pop v-show="isShow" >{{msg}}</pop>
+      <Alert v-show="isShow" >{{msg}}</Alert>
       <div>
         <label for="">书名</label>
         <input type="text" v-model="obj.bookName" placeholder="不能为空">
@@ -22,15 +22,9 @@
 </template>
 
 <script>
-  import myHeader from '../base/myHeader'
-  import pop from '../base/alert'
   import {mapMutations,mapState,mapActions} from 'vuex'
     export default {
-        name: "add",
-      components:{
-        myHeader,
-        pop,
-      },
+      name: "add",
       data(){
           return{
            obj:{

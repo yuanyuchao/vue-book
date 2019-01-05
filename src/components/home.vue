@@ -1,10 +1,10 @@
 <template>
   <div>
-    <myHeader>首页</myHeader>
+    <MyHeader>首页</MyHeader>
     <div class="content">
-      <loadingAnimate v-if="loading"></loadingAnimate>
+      <Loading v-if="loading"></Loading>
       <template v-else>
-        <swiper :swiperSlides="sliders"></swiper>
+        <Swiper :swiperSlides="sliders"></Swiper>
         <div class="container">
           <h3>热门图书</h3>
           <ul>
@@ -22,10 +22,7 @@
 </template>
 
 <script>
-  import myHeader from '../base/myHeader'
-  import swiper from '../base/swiper'
   import {getSwiper,getHotBook} from '../API'
-  import loadingAnimate from '../base/loading'
 
   export default {
     name: "home",
@@ -35,11 +32,6 @@
         hotBook:[],
         loading:true,
       }
-    },
-    components: {
-      myHeader,
-      swiper,
-      loadingAnimate,
     },
     methods:{
       // increment(){

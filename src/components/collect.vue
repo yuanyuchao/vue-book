@@ -1,6 +1,6 @@
 <template>
   <div class=".cart">
-    <myHeader>购物车</myHeader>
+    <MyHeader>购物车</MyHeader>
     <div class="content">
       <h2 v-if="!cart.length">购物车为空！</h2>
       <template v-else>
@@ -23,14 +23,10 @@
 </template>
 
 <script>
-  import myHeader from '../base/myHeader'
   import {mapState, mapMutations, mapActions, mapGetters} from 'vuex'
 
   export default {
     name: "collect",
-    components: {
-      myHeader,
-    },
     data() {
       return {
         obj: {}

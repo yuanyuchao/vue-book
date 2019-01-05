@@ -1,8 +1,8 @@
 <template>
   <div class="detail">
-    <myHeader :back="true">详情</myHeader>
+    <MyHeader :back="true">详情</MyHeader>
     <div class="content">
-      <pop v-show="isShow">{{msg}}</pop>
+      <Alert v-show="isShow">{{msg}}</Alert>
       <div>
         <label for="">书名</label>
         <input type="text" v-model="obj.bookName">
@@ -24,16 +24,9 @@
 </template>
 
 <script>
-  import myHeader from '../base/myHeader'
-  import pop from '../base/alert'
   import {mapMutations, mapState} from 'vuex'
-  // import {findOneBook} from '../API'
   export default {
     name: "detail",
-    components: {
-      myHeader,
-      pop
-    },
     data() {
       return {
         obj: {

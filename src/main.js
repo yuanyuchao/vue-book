@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import store from './vuex/index.js'
+import './base/global.js'
 
 import router from './router'
 //引入轮播图插件
