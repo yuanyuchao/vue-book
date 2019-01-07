@@ -18,6 +18,7 @@
       </div>
         <button @click="addList(obj)">添加</button>
     </div>
+
   </div>
 </template>
 
@@ -34,6 +35,7 @@
              bookInfo:'',
              bookNumber:1,
              id:Math.random()*10,
+             isSelected:false
            },
             isShow:false,
             msg:'',
@@ -120,4 +122,5 @@
     margin: 10px 0;
     text-indent: 1em;
   }
+
 </style>

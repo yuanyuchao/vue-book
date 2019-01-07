@@ -9,7 +9,7 @@
         列表
       </router-link>
       <router-link to=/collect>
-        <i class="iconfont icon-shoucang"></i>
+        <i class="iconfont icon-gouwuche"></i>
         购物车
       </router-link>
       <router-link to="/add">

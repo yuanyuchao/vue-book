@@ -70,14 +70,14 @@
       }, 1500)
       //数据加载完毕loading消失。
     },
-    mounted() {
+    updated() {
+      this.fn();
     },
 
     methods: {
-      // save(){
-      //   alert(1)
-      //   localStorage.setItem('list',JSON.stringify(this.list))
-      // },
+      fn(){
+        console.log(document.documentElement.scrollTop);
+      },
       newAddCart(obj){
         for (let value of this.cart) {
           if (obj == value) {
@@ -148,6 +148,7 @@
     outline: none;
     color: #ffffff;
     border-radius: 3px;
+    line-height: 30px;
   }
 
   .btn>button:nth-of-type(2) {
@@ -159,6 +160,7 @@
     color: #ffffff;
     border-radius: 3px;
     margin-left: 45px ;
+    line-height: 30px;
   }
 
   li:last-child {
@@ -176,4 +178,5 @@
     height: 200px;
     text-align: center;
   }
+
 </style>

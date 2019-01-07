@@ -9,7 +9,7 @@ function capitalizeFirstLetter(string) {
 //2.是否搜索它的子目录文件
 //3.匹配文件的正则表达式
 const requireComponent = require.context('.',false,/\.vue$/);
-
+//keys 是一个函数，它返回一个数组，由所有可能被上下文模块处理的请求组成。
 requireComponent.keys().forEach(fileName=>{
   const componentConfig = requireComponent(fileName);
   const componentName = capitalizeFirstLetter(

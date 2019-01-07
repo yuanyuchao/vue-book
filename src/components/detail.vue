@@ -35,7 +35,8 @@
           bookPrice: '',
           bookInfo: '',
           bookCover: '',
-          bookNumber: 1
+          bookNumber: 1,
+          isSelected:false
         },
         isShow:false,
         msg:'',
@@ -100,6 +101,7 @@
             this.obj.id = this.list[i].id;
             this.obj.bookCover = this.list[i].bookCover;
             this.obj.bookNumber = this.list[i].bookNumber;
+            this.obj.isSelected = this.list[i].isSelected;
           }
         }
       },
