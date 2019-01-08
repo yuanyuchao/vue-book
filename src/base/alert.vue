@@ -14,17 +14,17 @@
 
 <style scoped>
 div {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  top: 85%;
+  top: 50%;
   transform: translate(-50%,-50%);
-  width: 250px;
+  width: 220px;
   height: 40px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: black;
   color: white;
   text-align: center;
   line-height: 40px;
-  font-size: 20px;
-  border-radius: 4px;
+  font-size: 18px;
+  border-radius: 5px;
 }
 </style>

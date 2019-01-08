@@ -60,7 +60,7 @@ const mutations = {
     for (let value of state.list) {
       if (obj.id == value.id) {
         state.cart.unshift(obj);
-        router.push('/collect');//vuex里使用路由跳转步骤
+        // router.push('/collect');//vuex里使用路由跳转步骤
         // 1.引入router
         // 2.在store里注册router
         // 3.不用加this，router也不用加$,直接使用router。
@@ -129,9 +129,6 @@ const getters = {
     state.totalPrice = 0;
     for (let value of state.selectedList) {
       state.totalPrice += (value.bookPrice) * (value.bookNumber);
-      if(state.totalPrice>9999){
-        state.totalPrice = 1+'万+';
-      }
     }
   },
 

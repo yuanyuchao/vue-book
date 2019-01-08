@@ -23,7 +23,7 @@
           <i class="iconfont icon-danxuanxuanzhong ml" v-else></i>
           全选</span>
 
-          <span>合计：<i>{{totalPrice}}</i>元</span>
+          <span>合计：<i>{{totalPrice.toFixed(2)}}</i>元</span>
           <span class="button">去结算({{totalCount}})</span>
         </p>
       </template>

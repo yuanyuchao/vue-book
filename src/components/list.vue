@@ -28,12 +28,8 @@
 </template>
 
 <script>
-  // import myHeader from '../base/myHeader'
   import {getBook, removeBook} from '../API'
-  // import loadingAnimate from '../base/loading'
-  // import pop from '../base/alert'
   import {mapState, mapMutations, mapActions,mapGetters} from 'vuex'
-  // import Loading from "../base/loading";
 
   export default {
     name: "list",
@@ -79,8 +75,8 @@
         console.log(document.documentElement.scrollTop);
       },
       newAddCart(obj){
-        for (let value of this.cart) {
-          if (obj == value) {
+        for (let i=0; i<this.cart.length;i++) {
+          if (obj == this.cart[i]) {
             this.isShow = true;
             this.tanMsg = '该商品已经在购物车了';
             setTimeout(()=>{
